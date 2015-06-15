@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.js"></script>
+<body>
+
+<div ng-app="">
+ 	<p>Name: <input type="string" ng-model="name" id="name" ui-mask="{{'(999) 999-9999'}}"></p>
+	
+ 	
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("name");
+	x.value = x.value.replace(/\D/g,'');
+	if(x.value.length == 10){
+	x.value = "(" + x.value.slice(0, 3) + ") " + x.value.slice(3, 6) + "-" + x.value.slice(6, 10);
+	}
+	else{
+	x.value = '';
+	alert('invalid input..');
+	}
+}
+</script>
+</body>
+</html>
